@@ -215,7 +215,7 @@ Edit the 7 functions in [q6_strings.py](python/q6_strings.py) --> code has been 
 ---
 
 ###Q7. Lists
-Edit the 5 functions in [q7_lists.py](python/q7_lists.py)
+Edit the 5 functions in [q7_lists.py](python/q7_lists.py) --> code has been updated!
 
 ---
 
