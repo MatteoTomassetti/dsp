@@ -210,7 +210,7 @@ Place code in this file: [q5_datetime.py](python/q5_datetime.py) --> code has be
 ---
 
 ###Q6. Strings
-Edit the 7 functions in [q6_strings.py](python/q6_strings.py)
+Edit the 7 functions in [q6_strings.py](python/q6_strings.py) --> code has been updated!
 
 ---
 
