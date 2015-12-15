@@ -49,7 +49,7 @@ What does `xargs` do? Give an example of how to use it.
 
 **xargs** is useful when combined with other command. Let me go over a few examples:
 
-1. `echo a b c d e f| xargs -n 3`
+* `echo a b c d e f| xargs -n 3`
 
 
 This command splits the inputs into three columns and return
@@ -58,12 +58,12 @@ a b c
 d e f
 ```
 
-2. `find . -name "dummy*" | xargs rm`
+* `find . -name "dummy*" | xargs rm`
 
 
 This command finds all the files whose name starts with "dummy" and deletes them
 
-3. `find . -name "paper*" | xargs grep "natbib"`
+* `find . -name "paper*" | xargs grep "natbib"`
 
 
 This finds the string "natbib" on all files whose name starts with "paper"
