@@ -13,20 +13,33 @@ these in a couple of hours.
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
 
-* `**cd**`, to navigate the file system
-* `**pwd**`, to check the current directory
-* `**mkdir**`, to create a directory
-* `**rm -rf**`, to remove a directory
-* `**ls**`, to check the content of a directory
-* `**scp / cp**`, to copy files
-* `**mv**`, to move files
-* `**more**`, to check the content of a file
-* `**head**`, to display the first 10 lines of a file
-* `**tail**`, to display the last 10 lines of a file
-* `**grep -r “something” * **`, to look for a string within all files in a directory
-* `**chmod ugo+rwx * **`, to change the reading, writing and execution permission of a file / directory
-* `**touch**`, to create a new file
-* `**du -sh **`, to know the size of a file
+> * `**cd**`, to navigate the file system
+
+> * `**pwd**`, to check the current directory
+
+> * `**mkdir**`, to create a directory
+
+> * `**rm -rf**`, to remove a directory
+
+> * `**ls**`, to check the content of a directory
+
+> * `**scp / cp**`, to copy files
+
+> * `**mv**`, to move files
+
+> * `**more**`, to check the content of a file
+
+> * `**head**`, to display the first 10 lines of a file
+
+> * `**tail**`, to display the last 10 lines of a file
+
+> * `**grep -r “something” * **`, to look for a string within all files in a directory
+
+> * `**chmod ugo+rwx * **`, to change the reading, writing and execution permission of a file / directory
+
+> * `**touch**`, to create a new file
+
+> * `**du -sh **`, to know the size of a file
 
 ---
 
@@ -35,10 +48,13 @@ Make a cheat sheet for yourself: a list of at least **ten** commands and what th
 
 What does `ls` do? What do `ls -a`, `ls -l`, and `ls -lh` do? What combinations of those flags are meaningful?
 
-* `**ls**` lists all files in the current folder (in alphabetical order)
-* `**ls -a**` list all files, without ignoring the ones that start with . or ..
-* `**ls -l**` shows more details, like the permission, ownershipt, size and modification date of each file
-* `**ls -lh**` makes the size "human readable", i.e. it's going to be in B, K, M, ...
+> * `**ls**` lists all files in the current folder (in alphabetical order)
+
+> * `**ls -a**` list all files, without ignoring hiddens files, the current folder and the folder above that
+
+> * `**ls -l**` shows more details, like the permission, ownership, size and modification date of each file
+
+> * `**ls -lh**` makes the size "human readable", i.e. it's going to be in B, K, M, ...
 
 ---
 
@@ -47,26 +63,26 @@ What does `ls` do? What do `ls -a`, `ls -l`, and `ls -lh` do? What combinations 
 
 What does `xargs` do? Give an example of how to use it.
 
-**xargs** is useful when combined with other command. Let me go over a few examples:
+> **xargs** is useful when combined with other command. Let me go over a few examples:
 
-* `echo a b c d e f| xargs -n 3`
+> * `echo a b c d e f| xargs -n 3`
 
 
-This command splits the inputs into three columns and return
-```
+> This command splits the inputs into three columns and return
+> ```
 a b c
 d e f
 ```
 
-* `find . -name "dummy*" | xargs rm`
+> * `find . -name "dummy*" | xargs rm`
 
 
-This command finds all the files whose name starts with "dummy" and deletes them
+> This command finds all the files whose name starts with "dummy" and deletes them
 
-* `find . -name "paper*" | xargs grep "natbib"`
+> * `find . -name "paper*" | xargs grep "natbib"`
 
 
-This finds the string "natbib" on all files whose name starts with "paper"
+> This finds the string "natbib" on all files whose name starts with "paper"
 
 ---
 
