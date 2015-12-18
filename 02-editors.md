@@ -31,7 +31,7 @@ Both Emacs and vim have built-in interactive tutorials that you can try.
 
 What terminal editor will you use? How did you make your decision?
 
-I will use Emacs because I have used it for years. I started using it when I was an undergraduate student and then stuck with it during my PhD.
+> I will use Emacs because I have used it for years. I started using it when I was an undergraduate student and then stuck with it during my PhD.
 
 ---
 
@@ -61,12 +61,14 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
-This may not be a popular choice, but I like to Xcode as a graphical editor. I feel like it's one of the fastest editors out there and works well with Python, which is the language I use the most. Like most editors Xcode automatically indents and highlights codes written in different programming languages. There's a lot of useful keyboard shortcuts and the ones I use the most are 
+> This may not be a popular choice, but I like to Xcode as a graphical editor. I feel like it's one of the fastest editors out there and works well with Python, which is the language I use the most. Like most editors Xcode automatically indents and highlights codes written in different programming languages. There's a lot of useful keyboard shortcuts and the ones I use the most are 
 
-cmd+f (find)
-cmd+alt+f (find and replace)
-cmd+] and cmd+[ (adjust indentation)
+> cmd+f (find)
 
-Call me an old-school programmer, but I don't like to customize my editors that much and I'd rather use the terminal. The most I can do is adjust the fontsize and background.
+> cmd+alt+f (find and replace)
+
+> cmd+] and cmd+[ (adjust indentation)
+
+> Call me an old-school programmer, but I don't like to customize my editors that much and I'd rather use the terminal. The most I can do is adjust the fontsize and background.
 
 ---
