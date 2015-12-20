@@ -8,12 +8,13 @@
 
 
 import csv
+import numpy as np
 
 class Football:
   
   def __init__(self,data):
     reader = csv.reader(open(data, 'r'))
-    keys = reader.next()
+    keys = reader.__next__()
     self.parsed_data={key:[] for key in keys}
     for row in reader:
       for k in range(len(row)):
@@ -30,10 +31,10 @@ class Football:
     mask = self.parsed_data["Goals"]-self.parsed_data["Goals Allowed"] == self.get_min_score_difference()
     return self.parsed_data["Team"][mask][0]
 
-g=Football("football.csv")
+g = Football("football.csv")
 
-print 'Team with the minimum difference between "Goals" and "Goals Allowed":', g.get_team()
-# print g.get_min_score_difference()
+print ('Team with the minimum difference between "Goals" and "Goals Allowed":', g.get_team())
+
   
 
   
