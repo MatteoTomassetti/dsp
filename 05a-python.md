@@ -48,10 +48,10 @@ my_set = set([1,2,3,4,5])
 
 > ```
 > python -m timeit -s "x=[1,2,3,4,5,6,7,8]" "3 in x"
-> 10000000 loops, best of 3: 0.0889 usec per loop
+> 10000000 loops, best of 3: 0.0728 usec per loop
 
 > python -m timeit -s "x=set([1,2,3,4,5,6,7,8])" "3 in x"
-> 10000000 loops, best of 3: 0.0609 usec per loop
+> 10000000 loops, best of 3: 0.0481 usec per loop
 > ```
 
 > which proves that searching element in a set is usuall faster.
@@ -79,7 +79,7 @@ square = lambda x: x**2.
 > Moreover, `lambda` can be used to create anonymous functions, which mean that it can be used to create a function without assigning it to a variable. For example the following piece of code
 ```
 students = [("Mark","C"),("Tom","A"),("Lisa","F"),("Nina","B")]
-sorted(students, key = lambda x:x[1])
+print (sorted(students, key = lambda x:x[1]))
 ```
 
 > Returns the input list sorted according to the grade of the student and the anonymous function is specified in the `key` argument.
@@ -100,23 +100,23 @@ squared_list = [ x**2 for x in my_list ]
 
 > Equivalently, one can get the same answer with the function `map`
 ```
-squared_list_map = map(lambda x:x**2,my_list)
+squared_list_map = list(map(lambda x:x**2,my_list))
 ```
 
-> In this particular example `map` performs poorly with respect to list comprehension.
+> In this particular example `map` performs worse than list comprehension:
 ```
 python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "[ x**2 for x in my_list ]"
-1000000 loops, best of 3: 1.53 usec per loop
-python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "map(lambda x:x**2,my_list)"
-100000 loops, best of 3: 2.44 usec per loop
+1000000 loops, best of 3: 5.51 usec per loop
+python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "list(map(lambda x:x**2,my_list))"
+100000 loops, best of 3: 7.04 usec per loop
 > ```
 
-> However, `map` can be faster when it is not coupled with `lambda`. For instance,
+> However, `map` in Python 3 is slightly faster than list comprehension when it is not coupled with `lambda`. For instance,
 >```
 python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "[ abs(x) for x in my_list ]"
-1000000 loops, best of 3: 1.34 usec per loop
-python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "map(abs,my_list)"
-1000000 loops, best of 3: 1.03 usec per loop
+1000000 loops, best of 3: 1.88 usec per loop
+python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "list(map(abs,my_list))"
+1000000 loops, best of 3: 1.53 usec per loop
 ```
 
 > Another example of things we could do with list comprehension is selecting only certain elements from a list. For instance, if we want to select the odd numbers from a list we can do
@@ -126,15 +126,15 @@ odd_numbers = [ x for x in my_list if x%2 == 1 ]
 
 > and the equivalent solution with the function `filter` is
 ```
-odd_numbers_filter = filter(lambda x: x%2==1 ,my_list)
+odd_numbers_filter = list(filter(lambda x: x%2==1 ,my_list))
 ```
 
 > `filter` is usually slower than list comprehension:
 ```
 python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "[ x for x in my_list if x%2 == 1 ]"
-1000000 loops, best of 3: 1.64 usec per loop
-python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "filter(lambda x: x%2==1 ,my_list)"
-100000 loops, best of 3: 2.24 usec per loop
+1000000 loops, best of 3: 2.73 usec per loop
+python -m timeit -s "my_list=[1,4,5,7,2,3,5,6,9,5,4,8,10,12]" "list(filter(lambda x: x%2==1 ,my_list))"
+100000 loops, best of 3: 3.99 usec per loop
 ```
 
 > Set comprehension can be use to create a set:
