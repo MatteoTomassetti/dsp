@@ -21,10 +21,10 @@ def donuts(count):
     
     message = "Number of donuts: "
     
-    if(count>=0):
-        return message+str(count)
-    elif(count>10):
+    if(count>=10):
         return message+"many"
+    else:
+        return message+str(count)
 
 def both_ends(s):
     """
@@ -154,9 +154,9 @@ def front_back(a, b):
     """
     def get_front_back(s):
         if(len(s)%2==0):
-            return (s[:len(s)/2],s[len(s)/2:])
+            return (s[:len(s)//2],s[len(s)//2:])
         else:
-            return (s[:len(s)/2+1],s[len(s)/2+1:])
+            return (s[:len(s)//2+1],s[len(s)//2+1:])
     
     a_front,a_back = get_front_back(a)
     b_front,b_back = get_front_back(b)
