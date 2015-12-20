@@ -67,7 +67,7 @@ if __name__ == "__main__":
     print("The number of words should an integer!")
   
   mt.rnd_text(filename)
-  print mt.text
+  print (mt.text)
 
 
 
