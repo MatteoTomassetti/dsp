@@ -2,15 +2,21 @@ import numpy as np
 
 # this work together with advanced_python_regex.py, where I read all the data from faculty.csv
 
-# Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
-#```
-#professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn.edu'],\
-#                ('Jonas', 'Ellenberg'): ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu'],\
-#                ('Yimei', 'Li'): ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'],\
-#                ('Mingyao','Li'): ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'],\
-#                ('Hongzhe','Li'): ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']
-#            }
-#```
+#Q6.  Create a dictionary in the below format:
+# ```
+# faculty_dict = { 'Ellenberg': [\
+#               ['Ph.D.', 'Professor', 'sellenbe@upenn.edu'],\
+#               ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu']
+#                             ],
+#               'Li': [\
+#               ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'],\
+#               ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'],\
+#               ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']
+#                             ]
+#             }
+# ```
+# Print the first 3 key and value pairs of the dictionary:
+
 # find the name and surname of the faculty members
 
 the_names = [dummy.split(" ")[0] for dummy in data["name"]]
@@ -29,11 +35,28 @@ for dummy in data[" degree"]:
 all_degrees = [dummy.replace("PhD","Ph.D.") for dummy in all_degrees]
 all_degrees = [dummy.replace("ScD","Sc.D.") for dummy in all_degrees]
 
+professor_dict = {(the_names[i]): [all_degrees[i],all_titles[i],all_emails[i]] for i in range(len(the_names))}
+
+for i in range(3):
+  the_key = list(professor_dict.keys())[i]
+  print (the_key, professor_dict[the_key])
+
+# Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
+#```
+#professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn.edu'],\
+#                ('Jonas', 'Ellenberg'): ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu'],\
+#                ('Yimei', 'Li'): ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'],\
+#                ('Mingyao','Li'): ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'],\
+#                ('Hongzhe','Li'): ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']
+#            }
+#```
+
+
 professor_dict = {(the_names[i],the_surnames[i]): [all_degrees[i],all_titles[i],all_emails[i]] for i in range(len(the_names))}
 
 for i in range(3):
-  the_key = professor_dict.keys()[i]
-  print the_key, professor_dict[the_key]
+  the_key = list(professor_dict.keys())[i]
+  print (the_key, professor_dict[the_key])
 
 
 #Q8.  It looks like the current dictionary is printing by first name.  Sort by last name and print the first 3 key and value pairs.  
@@ -44,6 +67,6 @@ for i in range(3):
 keys_sorted_by_surname = sorted(professor_dict.keys(),key = lambda x:x[1])
 
 for i in range(3):
-  print keys_sorted_by_surname[i],professor_dict[keys_sorted_by_surname[i]]
+  print (keys_sorted_by_surname[i],professor_dict[keys_sorted_by_surname[i]])
 
 
