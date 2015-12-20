@@ -25,7 +25,7 @@ import numpy as np
 # Q5. Write email addresses from Part I to csv file
 
 filename = "emails.csv"
-with open(filename, "wb") as f:
+with open(filename, "w") as f:
     writer = csv.writer(f, lineterminator='\n')
     for email in all_emails:
         writer.writerow([email]) 
