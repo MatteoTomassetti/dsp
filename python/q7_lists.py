@@ -15,7 +15,7 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    return len(filter(lambda x:x[0]==x[-1] if len(x)>=2 else False,words))
+    return len(list(filter(lambda x:x[0]==x[-1] if len(x)>=2 else False,words)))
 
 
 def front_x(words):
