@@ -1,8 +1,31 @@
 #!/usr/bin/env python3
 
+import csv
 import numpy as np
 
-# this work together with advanced_python_regex.py, where I read all the data from faculty.csv
+# code copied from advanced_python_regex.py
+# --- START ---
+# reading the data
+datafile = "faculty.csv"
+reader = csv.reader(open(datafile, 'r'))
+keys = reader.__next__()
+data={key:[] for key in keys}
+for row in reader:
+  for k in range(len(row)):
+    data[keys[k]].append(row[k])
+
+# converting every field into a numpy array
+for k in range(len(keys)):
+  data[keys[k]] = np.array(data[keys[k]])
+
+all_titles = []
+for title in data[" title"]:
+  title = title.replace(" is"," of")
+  idx = title.find(" of") # find the index of the first occurence of " of" in the title string
+  all_titles.append(title[:idx])
+
+all_emails = data[" email"]
+
 
 #Q6.  Create a dictionary in the below format:
 # ```
