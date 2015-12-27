@@ -25,11 +25,11 @@ Here is a list of each degree and their frequencies
 * ScD 6
 * MPH 2
 * MS 2
-* MD 1
 * MA 1
-* BSEd 1
+* JS 1
 * No degree 1
-* JD 1
+* MD 1
+* BSEd 1
 
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
@@ -86,11 +86,11 @@ faculty_dict = { 'Ellenberg': [\
                             ]
             }
 ```
-Print the first 3 key and value pairs of the dictionary:
+Print the first 3 key and value pairs of the dictionary (I get different results if I use python 2 or 3 because of hash randomization):
 
-> * Marshall ['MD MPH Ph.D.', 'Professor', 'mjoffe@mail.med.upenn.edu']
-* Russell ['0', 'Assistant Professor', 'rshi@mail.med.upenn.edu']
-* Jinbo ['Ph.D.', 'Associate Professor', 'jinboche@upenn.edu']
+> * Andrea ['Sc.D.', 'Professor', 'atroxel@mail.med.upenn.edu']
+* Benjamin ['Ph.D.', 'Associate Professor', 'bcfrench@mail.med.upenn.edu']
+* Wensheng ['Ph.D.', 'Professor', 'wguo@mail.med.upenn.edu']
 
 ####Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
 
@@ -103,11 +103,11 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
             }
 ```
 
-Print the first 3 key and value pairs of the dictionary (I get different results if I use python 2 or 3):
+Print the first 3 key and value pairs of the dictionary (I get different results if I use python 2 or 3 because of hash randomization):
 
-> * ('Haochang', 'Shou') ['Ph.D.', 'Assistant Professor', 'hshou@mail.med.upenn.edu']
-* ('Justine', 'Shults') ['Ph.D.', 'Professor', 'jshults@mail.med.upenn.edu']
-* ('Kathleen', 'Propert') ['Sc.D.', 'Professor', 'propert@mail.med.upenn.edu']
+> * ('Wei', 'Yang') ['Ph.D.', 'Assistant Professor', 'weiyang@mail.med.upenn.edu']
+* ('Benjamin', 'French') ['Ph.D.', 'Associate Professor', 'bcfrench@mail.med.upenn.edu']
+* ('Andrea', 'Troxel') ['Sc.D.', 'Professor', 'atroxel@mail.med.upenn.edu']
 
 ####Q8.  It looks like the current dictionary is printing by first name.  Sort by last name and print the first 3 key and value pairs.  
 
