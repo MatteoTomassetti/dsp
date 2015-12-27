@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import numpy as np
 
 # this work together with advanced_python_regex.py, where I read all the data from faculty.csv
