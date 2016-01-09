@@ -68,3 +68,4 @@ P-value (resampling)= 0.0
 ```
 
 Therefore, the p-values for the two methods are very similar and there is no reason to choose one model over the other.
+Based of the hypothesis tests performed here we can conclude that the difference in pregnancy length is not statistically significant and it is most likely due to randomness because the p-value is large (i.e. greater than 5%). On the other hand, the p-value when testing the difference in birth weight is zero, so it is likely that the population of first and other babies have different mean birth weight.
