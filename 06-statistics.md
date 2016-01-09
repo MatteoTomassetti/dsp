@@ -96,12 +96,12 @@ For a frequentist the probability of an event is its relative frequency in the l
 
 > For instance, if we want to determine whether a coin is fair we can use two different approaches. In the frequentist approach we run an experiment and for instance, we find that if we toss a coin 1000 times we have 460 heads and 540 tails.
 In the frequentist set of mind one performs an **hypothesis test** and the null hypothesis is that the coin is fair is the probability of having tail (or head) is 50%. In order to test whether the null hypothesis is rejected or not, one needs to compute the p-value, which is the probability of having an outcome equal or larger to what is observed given the null hypothesis. If the null hypothesis is true we're dealing with Bernoulli trials with `p=0.5`, hence the p-value is
-`P(Heads >= 460 | Bernoulli(p=0.5,n=1000)) = 0.99`, so this means that we fail to reject the null hypothesis.
+**`P(Heads >= 460 | Bernoulli(p=0.5,n=1000)) = 0.99`**, so this means that we fail to reject the null hypothesis.
 
 > On the other hand, using a Bayesian approach one starts by assigning the prior probability of having heads. Because we have no prior information a reasonable choice is to assume P(the coin is fair) = 0.5.
 Then this probability is updated after each coin toss using the Bayes' theorem
 
-> **P(the coin is fair | data) = P(data | the coin is fair) P(the coin is fair) / P(data) **
+> **`P(the coin is fair | data) = P(data | the coin is fair) P(the coin is fair) / P(data)`**
 
 
 
