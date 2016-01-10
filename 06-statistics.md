@@ -74,13 +74,13 @@ Elvis Presley had a twin brother who died at birth.  What is the probability tha
 
 > Using Bayes' Theorem, the probability that Elvis was an identical twin given that he had a twin brother is 
 
-> **P(identical twin | twin brother and Elvis is a boy) = P(identical twin) P(twin brother and Elvis is a boy| identical twin) / P(twin brother and Elvis is a boy)**
+> **P(identical twin | twin brother and Elvis is a boy) = P(identical twin) P(twin brother and Elvis is a boy | identical twin) / P(twin brother and Elvis is a boy)**
 
 > The denominator can be computed as
 
-> **P(twin brother and Elvis is a boy) = P(twin brother and Elvis is a boy| identical twin) P(identical twin) + P(twin brother and Elvis is a boy| fraternal twin) P(fraternal twin)**
+> **P(twin brother and Elvis is a boy) = P(twin brother and Elvis is a boy | identical twin) P(identical twin) + P(twin brother and Elvis is a boy | fraternal twin) P(fraternal twin)**
 
-> It is fair to assume that **P(twin brother and Elvis is a boy| identical twin)**=0.5  and **P(twin brother and Elvis is a boy| fraternal twin)**=0.25.
+> It is fair to assume that **P(twin brother and Elvis is a boy | identical twin)**=0.5  and **P(twin brother and Elvis is a boy | fraternal twin)**=0.25.
 > Therefore
 
 > **P(identical twin | twin brother and Elvis is a boy)** = 5/11
@@ -92,16 +92,18 @@ Elvis Presley had a twin brother who died at birth.  What is the probability tha
 How do frequentist and Bayesian statistics compare?
 
 > The main difference between frequentist and Bayesian inference is in the definition of the probability.
-For a frequentist the probability of an event is its relative frequency in the limit of very large number of trials. On the other hand, for a Bayesian the probability is a known quantity that we assign to the event prior to any experiment, which is then subsequently updated with collection of new, relevant data.
+For a frequentist the probability of an event is its relative frequency in the limit of very large number of trials. On the other hand, for a Bayesian the probability is a known quantity that we assign to the event prior to any experiment, which is then subsequently updated with the collection of new, relevant data.
 
 > For instance, if we want to determine whether a coin is fair we can use two different approaches. In the frequentist approach we run an experiment and for instance, we find that if we toss a coin 1000 times we have 460 heads and 540 tails.
 In the frequentist set of mind one performs an **hypothesis test** and the null hypothesis is that the coin is fair is the probability of having tail (or head) is 50%. In order to test whether the null hypothesis is rejected or not, one needs to compute the p-value, which is the probability of having an outcome equal or larger to what is observed given the null hypothesis. If the null hypothesis is true we're dealing with Bernoulli trials with `p=0.5`, hence the p-value is
 **`P(Heads >= 460 | Bernoulli(p=0.5,n=1000)) = 0.99`**, so this means that we fail to reject the null hypothesis.
 
-> On the other hand, using a Bayesian approach one starts by assigning the prior probability of having heads. Because we have no prior information a reasonable choice is to assume P(the coin is fair) = 0.5.
-Then this probability is updated after each coin toss using the Bayes' theorem
+> On the other hand, if one adopts a Bayesian approach one starts by assigning the prior probability of the coin to be fair (or the prior probability of getting heads). Because we have no prior information a reasonable choice is to assume P(the coin is fair) = 0.5.
+Then this probability is updated after each coin toss using Bayes' theorem
 
 > **`P(the coin is fair | data) = P(data | the coin is fair) P(the coin is fair) / P(data)`**
+
+
 
 
 
